@@ -3,7 +3,6 @@ package com.todolist.todolist;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.HPos;
-import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -18,11 +17,8 @@ import javafx.scene.text.Font;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-import java.text.Format;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
 import java.util.List;
 
 public class View implements FXComponent{
@@ -259,7 +255,8 @@ public class View implements FXComponent{
                             String taskName = taskNameTextField.getText();
                             String taskDescription = descriptionTextField.getText();
                             LocalDate taskDate = taskDatePicker.getValue();
-                            Task task = new Task(taskName, taskDate, taskDescription);
+                            int id = controller.getTasks().getLast().getID() + 1;
+                            Task task = new Task(taskName, taskDate, taskDescription, id);
                             controller.handleSubmitClick(task);
                             dialog.close();
                         }

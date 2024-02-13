@@ -6,14 +6,14 @@ import java.util.Date;
 public class Task {
     private String taskName;
     private LocalDate date;
-    private boolean isCompleted;
+    private int id;
     private String description;
 
-    public Task(String taskName, LocalDate date, String description) {
+    public Task(String taskName, LocalDate date, String description, int id) {
         this.taskName = taskName;
         this.date = date;
         this.description = description;
-        this.isCompleted = false;
+        this.id = id;
     }
 
     public String getTaskName() {
@@ -22,8 +22,8 @@ public class Task {
     public LocalDate getDate() {
         return this.date;
     }
-    public boolean getIsCompleted() {
-        return this.isCompleted;
+    public int getID() {
+        return this.id;
     }
     public String getDescription() {
         return this.description;
@@ -34,8 +34,8 @@ public class Task {
     public void setDate(LocalDate date) {
         this.date = date;
     }
-    public void setIsCompleted(boolean isCompleted) {
-        this.isCompleted = isCompleted;
+    public void setID(int id) {
+        this.id = id;
     }
     public void setDescription(String description) {
         this.description = description;
